@@ -45,7 +45,7 @@ async function main(): Promise<void> {
     });
   } catch (error) {
     console.error('Failed to start Git MCP Server:');
-    console.error(error instanceof Error ? error.message : String(error));
+    console.error(error instanceof Error ? error.message : JSON.stringify(error, null, 2));
     
     if (error instanceof Error && error.stack) {
       console.error(error.stack);
@@ -58,7 +58,7 @@ async function main(): Promise<void> {
 // Start the server
 main().catch((error) => {
   console.error('Unhandled error in main process:');
-  console.error(error instanceof Error ? error.message : String(error));
+  console.error(error instanceof Error ? error.message : JSON.stringify(error, null, 2));
   
   if (error instanceof Error && error.stack) {
     console.error(error.stack);

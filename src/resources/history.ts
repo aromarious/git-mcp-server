@@ -107,7 +107,7 @@ export function setupHistoryResources(server: McpServer, resourceDescriptors: an
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               repoPath: ensureString(variables.repoPath),
               maxCount: variables.maxCount ? parseInt(ensureString(variables.maxCount), 10) : 50,
               file: variables.file ? ensureString(variables.file) : undefined
@@ -187,7 +187,7 @@ export function setupHistoryResources(server: McpServer, resourceDescriptors: an
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               repoPath: ensureString(variables.repoPath),
               filePath: ensureString(variables.filePath)
             }, null, 2),
@@ -265,7 +265,7 @@ export function setupHistoryResources(server: McpServer, resourceDescriptors: an
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               repoPath: ensureString(variables.repoPath),
               commitHash: ensureString(variables.commitHash)
             }, null, 2),
