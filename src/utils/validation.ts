@@ -106,9 +106,10 @@ export const PathValidation = {
   isWithinDirectory(targetPath: string, basePath: string): boolean {
     const normalizedTarget = path.normalize(targetPath);
     const normalizedBase = path.normalize(basePath);
+    console.error(`📌 Validating if ${normalizedTarget} is within ${normalizedBase}`);
     
     return normalizedTarget.startsWith(normalizedBase) &&
-      normalizedTarget.length > normalizedBase.length;
+      normalizedTarget.length >= normalizedBase.length;
   },
   
   /**

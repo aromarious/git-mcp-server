@@ -105,7 +105,7 @@ export function setupDiffResources(server: McpServer, resourceDescriptors: any):
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               repoPath: ensureString(variables.repoPath),
               fromRef: ensureString(variables.fromRef),
               toRef: variables.toRef ? ensureString(variables.toRef) : 'HEAD',
@@ -185,7 +185,7 @@ export function setupDiffResources(server: McpServer, resourceDescriptors: any):
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               repoPath: ensureString(variables.repoPath),
               path: variables.path ? ensureString(variables.path) : undefined
             }, null, 2),
@@ -263,7 +263,7 @@ export function setupDiffResources(server: McpServer, resourceDescriptors: any):
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               repoPath: ensureString(variables.repoPath),
               path: variables.path ? ensureString(variables.path) : undefined
             }, null, 2),
