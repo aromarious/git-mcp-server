@@ -93,7 +93,7 @@ export function setupRepositoryResources(server: McpServer, resourceDescriptors:
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               path: ensureString(variables.repoPath),
               isGitRepository: false
             }, null, 2),
@@ -168,7 +168,7 @@ export function setupRepositoryResources(server: McpServer, resourceDescriptors:
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               path: ensureString(variables.repoPath)
             }, null, 2),
             mimeType: "application/json"
@@ -242,7 +242,7 @@ export function setupRepositoryResources(server: McpServer, resourceDescriptors:
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               path: ensureString(variables.repoPath)
             }, null, 2),
             mimeType: "application/json"
@@ -316,7 +316,7 @@ export function setupRepositoryResources(server: McpServer, resourceDescriptors:
           contents: [{
             uri: uri.href,
             text: JSON.stringify({
-              error: error instanceof Error ? error.message : String(error),
+              error: error instanceof Error ? error.message : JSON.stringify(error, null, 2),
               path: ensureString(variables.repoPath)
             }, null, 2),
             mimeType: "application/json"
